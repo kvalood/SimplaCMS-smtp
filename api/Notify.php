@@ -88,32 +88,6 @@ class Notify extends Simpla
         }
     }
 
-    /***
-     * Отправка СМС
-     * @param array $data = array('to' => 'кому отправляем', 'data' => array('user_name' => '', 'order_id' => ''), 'template' = 'шаблон сообщения из админки')
-     * @return code error OR adding sms to database
-     */
-    public function sms($data = array())
-    {
-        // Заменяем переменные в шаблоне смс.
-        $message = $this->settings->{$data['template']};
-        if (!empty($data['data']))
-            foreach ($data['data'] as $key => $val)
-                $message = str_replace('$' . $key, $val, $message);
-
-        $path = 'http://sms.ru/sms/send?api_id=' . $this->settings->api_key_sms . '&to=' . $data['to'] . '&text=' . urlencode($message);
-
-        if ($this->settings->api_sms_from)
-            $path .= '&from' . $this->settings->api_sms_from;
-
-        // Отправляем SMS
-        $status = @file_get_contents($path);
-
-        if (empty($status)) {
-            return '220'; // Сервис временно недоступен.
-        }
-    }
-
 
     public function email_order_user($order_id)
     {
