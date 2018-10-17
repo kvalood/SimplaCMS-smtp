@@ -87,8 +87,7 @@ class Notify extends Simpla
             }
         }
     }
-
-
+    
     public function email_order_user($order_id)
     {
         if (!($order = $this->orders->get_order(intval($order_id))) || empty($order->email))
