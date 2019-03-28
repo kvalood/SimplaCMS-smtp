@@ -10,9 +10,17 @@
 ## OldSchool Установка:
 * Открываем `/config/config.php`, и копируем от туда код к себе. 
 * Настраиваем SMTP в файле `/config/config.php`
+  * `phpmailer_enable` - `true/false` - включить или выключить smtp, если выключен отправляет через обычный phpmail
+  * `phpmailer_host` - адрес smtp сервера
+  * `phpmailer_port` - порт smtp сервера
+  * `phpmailer_user` - пользователь (полностью "username@sitename.ru")
+  * `phpmailer_password` - пароль от этого пользователя
+  * `phpmailer_ssl` - `true/false` - включить SSL
+  * `phpmailer_ssl_verify` - `true/false` - выключить проверку SSL (бывает некоторые хостеры блокируют отправку SMTP, эта опция поможет)
+  
 * Качаем [PHPMailer](https://github.com/PHPMailer/PHPMailer)
 * Находим папку `src`, копируем из неё все файлы к себе в проект, в папку `/api/PHPmailer/` (папку PHPmailer надо создать)
-* Копируем `/api/Notify.php` к себе (если у вас SimplaCMS без доработок в этом файле) или выразем только нужный код, а именно c 1 по 89 строку.
+* Открываем `/api/Notify.php`, копируем к себе c 1 по 94 строку.
 
 ## Тестирование:
 * копируем файл _test_mail.php к себе в корневую папку сайта
