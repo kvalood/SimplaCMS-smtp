@@ -7,3 +7,4 @@ phpmailer_port = 465;
 phpmailer_user = "no-reply@sitename.ru";
 phpmailer_password = "123";
 phpmailer_ssl = true;
+phpmailer_ssl_verify = true;
