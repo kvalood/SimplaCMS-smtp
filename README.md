@@ -1,4 +1,4 @@
-# SimplaCMS-smtp
+# SimplaCMS smtp
 
 Небольшая доработка для корректной отправки писем через SMTP для SimplaCMS.
 
