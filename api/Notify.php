@@ -25,7 +25,7 @@ class Notify extends Simpla
     {
         $headers = "MIME-Version: 1.0\n";
         $headers .= "Content-type: text/html; charset=utf-8; \r\n";
-        $headers .= "From: " . $this->settings->site_name . "<$from>" . "\r\n";
+        $headers .= "From: " . $this->settings->company_name . "<$from> \r\n";
         if (!empty($reply_to))
             $headers .= "reply-to: $reply_to\r\n";
 
@@ -76,7 +76,7 @@ class Notify extends Simpla
             }
             
             $mailer->From = $mailer->Username; // $from
-            $mailer->FromName = $this->settings->site_name;
+            $mailer->FromName = $this->settings->company_name;
             $mailer->Sender = $mailer->Username;
             $mailer->Subject = $subject;
             $mailer->Body = $message;
