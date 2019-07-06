@@ -56,7 +56,7 @@ class Notify extends Simpla
                 $mailer->SMTPAutoTLS = "false";
 
                 // Отключить проверку сертификата - https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting#updating-ca-certificates
-                if ($this->config->phpmailer_verify_ssl != true) {
+                if ($this->config->phpmailer_ssl_verify != true) {
                     $mailer->SMTPOptions = [
                         'ssl' => [
                             'verify_peer' => false,
