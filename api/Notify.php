@@ -38,7 +38,7 @@ class Notify extends Simpla
     {
         if (!$this->config->phpmailer_enable) {
 
-            $this->php_mail($to, $subject, $message, $from, $reply_to);
+            $this->php_email($to, $subject, $message, $from, $reply_to);
 
         } else {
 
