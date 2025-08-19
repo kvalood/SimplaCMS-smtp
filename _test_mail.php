@@ -10,7 +10,7 @@ require 'api/Simpla.php';
 $simpla = new Simpla();
 
 $simpla->notify->SMTPDebug = 3;
-$simpla->notify->email('x404@bk.ru', 'Тема - тестовое сообщение', 'Тестируем SMTP');
+$simpla->notify->email('yourMail@mail.ru', 'Тема - тестовое сообщение', 'Тестируем SMTP');
 
 if ($simpla->request->get('order_id', 'integer')) {
     $simpla->notify->email_order_admin($simpla->request->get('order_id', 'integer'));
